@@ -1,5 +1,18 @@
-<html>
 <head>
+
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="contentslider.css" />
+
+<script type="text/javascript" src="contentslider.js">
+
+/***********************************************
+* Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
 <title>
 	Workshop: Visualizing Text Locations Using Python
 </title>
@@ -19,41 +32,275 @@ Have a collection of digitized books, music lyrics, letters, or articles, and wa
 </ol>
 A variety of samples will be provided, but you are welcome to bring your own documents in text (.txt) format as well.
 <br><br>
-<table width=100% border=1>
+<center>
+
+
+<table width=100% border=0>
 <tr>
-<td align=center width=20%>
+<td align=center width=16%>
 	<figure>
-	<a href="https://josh-been.github.io/SMU_Mapping_Texts/smu_flyer.png" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/download1.png" height=50 border=1></a>
-	<figcaption>Step #1:<br>Download Sample Text Files</figcaption>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 1)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/smu_flyer.png" height=50 border=1></a>
+	<figcaption>SMU Flyer</figcaption>
 	</figure>
 </td>
-<td align=center width=20%>
+<td align=center width=16%>
 	<figure>
-	<a href="https://colab.research.google.com/" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/colab.jpeg" height=50 border=1></a>
-	<figcaption>Step #2:<br>Introduce Google Colaboratory</figcaption>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 2)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/download1.png" height=50 border=1></a>
+	<figcaption>Download Sample Text Files</figcaption>
+	</figure>
+</td>
+<td align=center width=16%>
+	<figure>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 3)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/colab.jpeg" height=50 border=1></a>
+	<figcaption>Introduce Google Colaboratory</figcaption>
 	</figure>
 
 </td>
-<td align=center width=20%>
+<td align=center width=16%>
 	<figure>
-	<a href="https://www.bingmapsportal.com/" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/pyimage.jpeg" height=50 border=1></a>
-	<figcaption>Step #3:<br>Python Snippets</figcaption>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 4)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/pyimage.jpeg" height=50 border=1></a>
+	<figcaption>Python Snippets</figcaption>
 	</figure>
 </td>
-<td align=center width=20%>
+<td align=center width=16%>
 	<figure>
-	<a href="https://www.bingmapsportal.com/" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/bing-logo-1200.jpg" height=50 border=1></a>
-	<figcaption>Step #4:<br>Register for Bing Maps Key</figcaption>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 5)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/bing-logo-1200.jpg" height=50 border=1></a>
+	<figcaption>Register or Retrieve Bing Maps Key</figcaption>
 	</figure>
 </td>
-<td align=center width=20%>
+<td align=center width=16%>
 	<figure>
-	<a href="https://www.bingmapsportal.com/" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/tdmmap.png" height=50 border=1></a>
-	<figcaption>Step #5:<br>Use Final Notebook</figcaption>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 6)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/tdmmap.png" height=50 border=1></a>
+	<figcaption>Use Prepared Notebook</figcaption>
 	</figure>
 </td>
 </tr>
 </table>
+<br>
 
-</head>
+
+<!--Inner content DIVs should always carry "contentdiv" CSS class-->
+<!--Pagination DIV should always carry "paginate-SLIDERID" CSS class-->
+
+<div id="slider2" class="sliderwrapper">
+
+<div class="contentdiv">
+<br>
+<table width=1000>
+<tr>
+<td align=center><a href="https://josh-been.github.io/SMU_Mapping_Texts/JOSHflyer1.pdf" target="_blank" border=1><img src="https://josh-been.github.io/SMU_Mapping_Texts/smu_flyer.png"></a>
+</td>
+</tr>
+</table>
+</div>
+<br>
+
+<div class="contentdiv">
+<br>
+<table width=1000>
+<tr>
+<td align=center>
+<h2>Sample Datasets for Download</h2>
+</td>
+</tr>
+</table>
+<br />
+</div>
+
+<div class="contentdiv">
+<table width=900 border=0>
+<tr>
+<td align=center width=40%>
+	<figure>
+	<a href="https://colab.research.google.com/" target="_blank"><img src="https://josh-been.github.io/SMU_Mapping_Texts/colab.jpeg" height=150 border=1></a>
+	<figcaption>Introduce Google Colaboratory</figcaption>
+	</figure>
+</td>
+<td align=left width=60%>
+	Exercises:
+	<br>
+	<ol>
+		<li>Hello, world!
+		<li>Markdown header
+		<li>Multiply two values together
+	</ol>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="contentdiv">
+<table>
+<td align=left>
+	<i>Named Entity Recognition</i>
+	<pre>
+contents=''
+# Load spaCy and displaCy for English content
+import spacy, en_core_web_sm
+from spacy import displacy
+nlp = en_core_web_sm.load()
+
+# Render inline from variable contents
+displacy.render(nlp(contents), jupyter=True, style='ent')
+	</pre>
+	<i>Location Frequencies</i><br>
+	<pre>
+from collections import Counter
+contents='I live in Waco, Texas. I used to live in League City.'
+
+docs = nlp(contents)
+# Create list of tuples containing text and entity label
+entities = [(X.text, X.label_) for X in docs.ents]
+# Store each list of tuples in cumulative list
+# full_entities=full_entities+entities
+# Create list of labels
+labels = [x.label_ for x in docs.ents]
+# Store each list of labels in cumulative list
+# full_labels=full_labels+labels
+print(len(entities), 'entities found')
+print(Counter(labels),'\n______\n')
+
+# Frequencies of GPE and LOC Locations Passed to locations_list
+print('Frequencies of GPE and LOC Locations')
+locations=[]
+locations_list=[]
+for entity in entities:
+	if entity[1]=='GPE' or entity[1]=='LOC':
+		locations.append(entity)
+		locations_list.append(entity[0])
+locations_d=Counter(locations_list)
+display(Counter(locations).most_common())
+	</pre>
+	<i>Geocode Addresses Using Bing Maps API</i><br>
+	<pre>
+# Enter Bing Maps Key Below
+bkey=''
+
+try:
+    import geocoder
+except:
+    !pip install geocoder
+    import geocoder
+
+if bkey!='':
+    for key, value in locations_d.items():
+        g = geocoder.bing(key, key=bkey)
+        location=[g.lat, g.lng]
+        print(key, location)
+	</pre>
+	<i>Geocode and Create Interactive Map</i>
+	<pre>
+# Enter Bing Maps Key Below
+bkey=''
+
+try:
+    import geocoder
+except:
+    !pip install geocoder
+    import geocoder
+
+import folium
+
+if bkey!='':
+
+  min_location_counts_map = 1
+
+  m = folium.Map(
+      location=[27.4, -40.3],
+      zoom_start=2,
+      tiles='Stamen Toner'
+  )
+
+
+  for key, value in locations_d.items():
+      try:
+          if value>=min_location_counts_map:     # minimum frequency for mapping
+              g = geocoder.bing(key, key=bkey)
+              if g.raw['confidence']=='High':   # confidence is high, medium, low
+                  folium.CircleMarker(
+                      location=[g.lat, g.lng],
+                          radius=value/5,     # Can decrease or increase sizes by /n or *n
+                          popup=key,
+                          tooltip=key,
+                          color='#154734',
+                          fill=True,
+                          fill_color='#154734'
+                      ).add_to(m)
+      except:
+          pass
+
+  display(m)
+  m.save('index.html')
+  </pre>
+  <i>Upload to Google Colab & Read File</i>
+  <pre>
+from google.colab import files
+
+# Browse/Upload File
+up=files.upload()
+# File passed to variable doc
+doc=next(iter(up))
+
+# Read a file using the variable doc
+f=open(doc, 'r')
+# Pass into variable named contents
+contents=f.read()
+# close connection to file
+f.close()
+	</pre>
+</tr>
+</table>
+</div>
+
+<div class="contentdiv">
+<br>
+<table width=1000>
+<tr>
+<td align=center>
+<h2>Bing Maps Key</h2>
+</td>
+</tr>
+</table>
+<br />
+</div>
+
+<div class="contentdiv">
+<br>
+<table width=1000>
+<tr>
+<td align=center>
+<h2>Use Prepared Notebook</h2>
+</td>
+</tr>
+</table>
+<br />
+</div>
+
+</div>
+
+<div id="paginate-slider2" class="pagination">
+
+<a href="#" class="toc">First Page</a> <a href="#" class="toc anotherclass">Second Page</a> <a href="#" class="toc">Third Page</a> <a href="#" class="prev" style="margin-left: 10px"><</a> <a href="#" class="next">></a>
+
+</div>
+
+<script type="text/javascript">
+
+featuredcontentslider.init({
+	id: "slider2",  //id of main slider DIV
+	contentsource: ["inline", ""],  //Valid values: ["inline", ""] or ["ajax", "path_to_file"]
+	toc: "markup",  //Valid values: "#increment", "markup", ["label1", "label2", etc]
+	nextprev: ["Previous", "Next"],  //labels for "prev" and "next" links. Set to "" to hide.
+	revealtype: "click", //Behavior of pagination links to reveal the slides: "click" or "mouseover"
+	enablefade: [true, 0.2],  //[true/false, fadedegree]
+	autorotate: [false, 3000],  //[true/false, pausetime]
+	onChange: function(previndex, curindex, contentdivs){  //event handler fired whenever script changes slide
+		//previndex holds index of last slide viewed b4 current (0=1st slide, 1=2nd etc)
+		//curindex holds index of currently shown slide (0=1st slide, 1=2nd etc)
+	}
+})
+
+</script>
+
+</body>
 </html>
