@@ -39,38 +39,44 @@ Have a collection of digitized books, music lyrics, letters, or articles, and wa
 
 <table width=100% border=0>
 <tr>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 1)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/smu_flyer.png" height=50 border=1></a>
 	<figcaption>SMU Flyer</figcaption>
 	</figure>
 </td>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
+	<figure>
+	<a href="javascript:featuredcontentslider.jumpTo('slider2', 7)"><img src="https://libapps.s3.amazonaws.com/accounts/144176/images/introdataviz.png" height=50 border=1></a>
+	<figcaption>Introduction Slideshow</figcaption>
+	</figure>
+</td>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 2)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/download1.png" height=50 border=1></a>
 	<figcaption>Sample Datasets for Practice</figcaption>
 	</figure>
 </td>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 3)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/colab.jpeg" height=50 border=1></a>
 	<figcaption>Introduce Google Colaboratory</figcaption>
 	</figure>
 
 </td>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 4)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/pyimage.jpeg" height=50 border=1></a>
 	<figcaption>Python Snippets</figcaption>
 	</figure>
 </td>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 5)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/bing-logo-1200.jpg" height=50 border=1></a>
 	<figcaption>Register or Retrieve Bing Maps Key</figcaption>
 	</figure>
 </td>
-<td align=center width=16%>
+<td align=center valign=top width=14%>
 	<figure>
 	<a href="javascript:featuredcontentslider.jumpTo('slider2', 6)"><img src="https://josh-been.github.io/SMU_Mapping_Texts/tdmmap.png" height=50 border=1></a>
 	<figcaption>Use Prepared Notebook</figcaption>
@@ -138,7 +144,7 @@ Have a collection of digitized books, music lyrics, letters, or articles, and wa
 <br>
 <b>Hymnary.org</b>
 <ul>
-	<li><a href="https://josh-been.github.io/SMU_Mapping_Texts/hymnary_org_english_first_lines.txt" target="_blank">First line of all English songs</a>
+	<li><a href="https://josh-been.github.io/SMU_Mapping_Texts/hymnary_org_english_first_lines.txt" target="_blank">First line of all English hymns</a>
 	<ul>
 		<li>Exported from Hymnary.org: <a href="https://hymnary.org/explore" target="_blank">CSV dump of the entire Hymnary database (texts)</a>
 		<li>Exported firstline column as text
@@ -175,7 +181,7 @@ Have a collection of digitized books, music lyrics, letters, or articles, and wa
 <div class="contentdiv">
 <table>
 <td align=left>
-	<i>Named Entity Recognition</i>
+	<i><font color="blue">Named Entity Recognition</font></i>
 	<pre>
 contents=''
 # Load spaCy and displaCy for English content
@@ -186,10 +192,9 @@ nlp = en_core_web_sm.load()
 # Render inline from variable contents
 displacy.render(nlp(contents), jupyter=True, style='ent')
 	</pre>
-	<i>Location Frequencies</i><br>
+	<i><font color="blue">Location Frequencies</font></i><br>
 	<pre>
 from collections import Counter
-contents='I live in Waco, Texas. I used to live in League City.'
 
 docs = nlp(contents)
 # Create list of tuples containing text and entity label
@@ -214,7 +219,7 @@ for entity in entities:
 locations_d=Counter(locations_list)
 display(Counter(locations).most_common())
 	</pre>
-	<i>Geocode Addresses Using Bing Maps API</i><br>
+	<i><font color="blue">Geocode Addresses Using Bing Maps API</font></i><br>
 	<pre>
 # Enter Bing Maps Key Below
 bkey=''
@@ -231,10 +236,20 @@ if bkey!='':
         location=[g.lat, g.lng]
         print(key, location)
 	</pre>
-	<i>Geocode and Create Interactive Map</i>
+	<i><font color="blue">Geocode and Create Interactive Map</font></i>
 	<pre>
-# Enter Bing Maps Key Below
+# Specify Options Below
+#######################
 bkey=''
+min_location_counts_map = 1 # minimum frequency for mapping
+map_base_type = 'Stamen Toner' #options: Stamen Toner, Stamen Terrain, Stamen Watercolor, Open Street Map 
+zoom_default=2
+start_location=[27.4, -40.3]
+geocode_confidence='High' # options: High, Medium, Low
+radius_multiplier=25
+outline_color='#154734'
+fill_polygon_color='#154734'
+#######################
 
 try:
     import geocoder
@@ -246,28 +261,25 @@ import folium
 
 if bkey!='':
 
-  min_location_counts_map = 1
-
   m = folium.Map(
-      location=[27.4, -40.3],
-      zoom_start=2,
-      tiles='Stamen Toner'
+      location=start_location,
+      zoom_start=zoom_default,
+      tiles=map_base_type
   )
-
 
   for key, value in locations_d.items():
       try:
-          if value>=min_location_counts_map:     # minimum frequency for mapping
+          if value>=min_location_counts_map:
               g = geocoder.bing(key, key=bkey)
-              if g.raw['confidence']=='High':   # confidence is high, medium, low
+              if g.raw['confidence']==geocode_confidence:
                   folium.CircleMarker(
                       location=[g.lat, g.lng],
-                          radius=value/5,     # Can decrease or increase sizes by /n or *n
-                          popup=key,
-                          tooltip=key,
-                          color='#154734',
+                          radius=value*radius_multiplier,
+                          popup=key+' '+str(value),
+                          tooltip=key+' '+str(value),
+                          color=outline_color,
                           fill=True,
-                          fill_color='#154734'
+                          fill_color=fill_polygon_color
                       ).add_to(m)
       except:
           pass
@@ -275,7 +287,7 @@ if bkey!='':
   display(m)
   m.save('index.html')
   </pre>
-  <i>Upload to Google Colab & Read File</i>
+  <i><font color="blue">Upload to Google Colab & Read File</font></i>
   <pre>
 from google.colab import files
 
@@ -330,6 +342,18 @@ Trouble obtaining a key? <a href="https://researchguides.baylor.edu/c.php?g=9809
 <a href="https://colab.research.google.com/drive/1rl3olFXZbtzRozxHK-pANIxMzsbLbz0a" target="_blank">Access via Google Colaboratory</a> (Python environment)
 <br><br>
 <a href="https://github.com/Josh-Been/SMU_Mapping_Texts/blob/master/SMU_LocationEntityRecognition.ipynb" target="_blank">View on Github</a> (read only)
+</td>
+</tr>
+</table>
+<br />
+</div>
+
+<div class="contentdiv">
+<br>
+<table width=1000>
+<tr>
+<td align=center>
+<embed src="https://josh-been.github.io/SMU_Mapping_Texts/Tableau-VTD.pdf" type="application/pdf" width="100%" height="600px" />
 </td>
 </tr>
 </table>
