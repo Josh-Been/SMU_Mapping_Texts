@@ -242,10 +242,10 @@ if bkey!='':
 #######################
 bkey=''
 min_location_counts_map = 1 # minimum frequency for mapping
-map_base_type = 'Stamen Toner' #options: Stamen Toner, Stamen Terrain, Stamen Watercolor, Open Street Map 
+map_base_type = 'Open Street Map' # options: Stamen Toner, Stamen Terrain, Stamen Watercolor, Open Street Map 
 zoom_default=2
-start_location=[27.4, -40.3]
-geocode_confidence='High' # options: High, Medium, Low
+start_location=[31.51073, -96.4247]  # U.S. 31.51073, -96.4247, World 0,0, Texas 31.1351682, -99.3350552
+geocode_confidence=['High'] # options: High, Medium, Low - Format: ['High','Medium','Low]
 radius_multiplier=25
 outline_color='#154734'
 fill_polygon_color='#154734'
@@ -271,7 +271,7 @@ if bkey!='':
       try:
           if value>=min_location_counts_map:
               g = geocoder.bing(key, key=bkey)
-              if g.raw['confidence']==geocode_confidence:
+              if g.raw['confidence'] in geocode_confidence:
                   folium.CircleMarker(
                       location=[g.lat, g.lng],
                           radius=value*radius_multiplier,
@@ -339,7 +339,7 @@ Trouble obtaining a key? <a href="https://researchguides.baylor.edu/c.php?g=9809
 <tr>
 <td align=left>
 <br>
-<a href="https://colab.research.google.com/drive/1rl3olFXZbtzRozxHK-pANIxMzsbLbz0a" target="_blank">Access via Google Colaboratory</a> (Python environment)
+<a href="https://colab.research.google.com/drive/1JsZV_1Ub-AWwfk3797TYC8Fn9hH_7scl" target="_blank">Access via Google Colaboratory</a> (Python environment)
 <br><br>
 <a href="https://github.com/Josh-Been/SMU_Mapping_Texts/blob/master/SMU_LocationEntityRecognition.ipynb" target="_blank">View on Github</a> (read only)
 </td>
