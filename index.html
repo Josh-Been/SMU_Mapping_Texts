@@ -303,6 +303,22 @@ contents=f.read()
 # close connection to file
 f.close()
 	</pre>
+	<i><font color="blue">Specifry URL</font></i>
+    <pre>
+url = ''
+
+import requests
+from bs4 import BeautifulSoup
+
+# define header or pages may refuse connection
+header = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+htmlContent = requests.get(url, headers=header)
+
+# remove tags using beautiful soup
+contents = BeautifulSoup(htmlContent.text, "lxml").text
+
+# remove line breaks and tab symbols
+contents=contents.replace('\n',' ').replace('\r','').replace('\t','')
 </tr>
 </table>
 </div>
