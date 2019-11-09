@@ -181,7 +181,7 @@ Have a collection of digitized books, music lyrics, letters, or articles, and wa
 <div class="contentdiv">
 <table>
 <td align=left>
-	<i><font color="blue">Named Entity Recognition</font></i>
+	<i><font color="blue">Named Entity Recognition<br>(Some places around the world I have visited)</font></i>
 	<pre>
 contents=''
 # Load spaCy and displaCy for English content
@@ -287,7 +287,7 @@ if bkey!='':
   display(m)
   m.save('index.html')
   </pre>
-  <i><font color="blue">Upload to Google Colab & Read File</font></i>
+  <i><font color="blue">Upload to Google Colab & Read File<br>(Add to Top)<br>(Use Twitter Sample)</font></i>
   <pre>
 from google.colab import files
 
@@ -303,7 +303,7 @@ contents=f.read()
 # close connection to file
 f.close()
 	</pre>
-	<i><font color="blue">Specifry URL</font></i>
+	<i><font color="blue">Specifry URL<br>(Add to Top)<br>(Search for Trump Speech Transcript)</font></i>
     <pre>
 url = ''
 
@@ -319,6 +319,8 @@ contents = BeautifulSoup(htmlContent.text, "lxml").text
 
 # remove line breaks and tab symbols
 contents=contents.replace('\n',' ').replace('\r','').replace('\t','')
+
+print('Successfully acquired content from',url)
 </tr>
 </table>
 </div>
@@ -350,6 +352,7 @@ Trouble obtaining a key? <a href="https://researchguides.baylor.edu/c.php?g=9809
 <tr>
 <td align=center>
 <h2>Use Prepared Notebook</h2>
+<h4>Handles Larger Files & Zipped Document Collections<br>Output Visualizations: Map, Wordcloud, Column Chart, Treemap</h4>
 </td>
 </tr>
 <tr>
@@ -392,7 +395,7 @@ Trouble obtaining a key? <a href="https://researchguides.baylor.edu/c.php?g=9809
 </ul>
 </td>
 <td align=center>
-<iframe src="https://show.zohopublic.com/publish/7pmks24ef8b06dc6e42f28cdb1ba523a91d0a/params?toolbar=true&menu=false&loop=false" width="400" height="300" style="border:1px solid #aabbcc;max-width: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://show.zohopublic.com/publish/7pmksf5d86f4f8f164d7f95428d0dae963df6/params?toolbar=true&menu=false&loop=false" width="400" height="300" style="border:1px solid #aabbcc;max-width: 100%;" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </td>
 </tr>
 </table>
